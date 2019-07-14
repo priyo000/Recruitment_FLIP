@@ -8,15 +8,13 @@ include 'config.php';
         }
 
         public function update($id,$status,$receipt,$time){
-            $update="UPDATE tb_disbursement SET status='$status',receipt='$receipt',time_served='$time' WHERE id='$id'";
+            $update="UPDATE tb_disbursement SET status='$status', receipt='$receipt', time_served='$time' WHERE id='$id'";
             mysqli_query($this->db,$update);
         }
 
         public function get($id){
             $data=mysqli_query($this->db,"SELECT * FROM tb_disbursement WHERE id='$id'");
-            while($d = mysqli_fetch_array($data)){
-                $hasil[] = $d;
-            }
+                $hasil = mysqli_fetch_assoc($data);
             return $hasil;
         }
 

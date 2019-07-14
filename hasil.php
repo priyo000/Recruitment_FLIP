@@ -4,6 +4,8 @@
     $data;
     if($_GET['aksi']=='tambah'){
         $data=$flip->post_FLIP();
+    }else if($_GET['aksi']=='cek'){
+        $data=$flip->cek_FLIP();
     }
 ?>
 <!DOCTYPE html>
@@ -14,8 +16,16 @@
     <title>HASIL</title>
 </head>
 <body>
-    <?php
-         var_dump($data);
-    ?>
+    <h1>ID : <?= $data["id"]; ?></h1>
+    <h2>BANK CODE : <?= $data["bank_code"]; ?></h2>
+    <h2>AKUN NUMBER : <?= $data["account_number"]; ?></h2>
+    <h2>AMOUNT : <?= $data["amount"]; ?></h2>
+    <h2>STATUS : <?= $data["status"]; ?></h2>
+    <h2>BENEFICIARY NAME : <?= $data["beneficiary_name"]; ?></h2>
+    <h2>REMARK : <?= $data["remark"]; ?></h2>
+    <h2>RECEIPT : <?= $data["receipt"]; ?></h2>
+    <h2>TIMESTAMP : <?= $data["timestamp"]; ?></h2>
+    <h2>TIME SERVED : <?= $data["time_served"]; ?></h2>
+    <h2>FEE : <?= $data["fee"]; ?></h2>
 </body>
 </html>
